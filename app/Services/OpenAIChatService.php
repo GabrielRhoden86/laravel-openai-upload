@@ -12,7 +12,7 @@ class OpenAIChatService
     public function __construct()
 
     {
-        $this->apiKey = '';
+        $this->apiKey = config('services.openai.api_key');
         $this->client = new Client(['base_uri' => 'https://api.openai.com']);
     }
 
@@ -32,8 +32,6 @@ class OpenAIChatService
         $message .= "b - demonstração do resultado do período de divulgação;\n";
         $message .= "c - demonstração do resultado abrangente do período de divulgação. A demonstração do resultado abrangente pode ser apresentada em quadro demonstrativo próprio ou dentro das mutações do patrimônio líquido. A demonstração do resultado abrangente, quando apresentada separadamente, começa com o resultado do período e se completa com os itens dos outros resultados abrangentes;\n";
         $message .= "d - demonstração das mutações do patrimônio líquido para o período de divulgação";
-        // $message .= "Se  o texto não estiver de acordo com os items justifique.\n";
-
 
         // Faz a chamada à OpenAI API
         $response = $this->sendChatRequest($message);

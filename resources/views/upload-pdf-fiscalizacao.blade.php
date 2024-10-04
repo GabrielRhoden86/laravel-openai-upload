@@ -4,7 +4,6 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {{-- @vite(['resources/js/app.js']) --}}
 </head>
 
 <body>
@@ -23,24 +22,17 @@
                 </div>
             </div>
         </form>
-        <div class="col-md-12">
-            <div class="container">
-                <h3>ANÁLISE DAS DEMONSTRAÇÕES CONTÁBEIS</h3>
-                <div style="width:90%;">
-
-                    @if (isset($messageValidFile))
-                        {{ $messageValidFile }}
-                    @endif
-
-                    {{-- @if (isset($validationErrors))
+        <div class="col-md-9">
+            <h3>ANÁLISE DAS DEMONSTRAÇÕES CONTÁBEIS</h3>
+            @if (isset($messageValidFile))
+                {{ $messageValidFile }}
+            @endif
+            {{-- @if (isset($validationErrors))
                     {{ $validationErrors }}
                      @endif --}}
-
-                    @if (isset($response))
-                        {{ $response }}
-                    @endif
-                </div>
-            </div>
+            @if (isset($response))
+                {{ $response }}
+            @endif
         </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
