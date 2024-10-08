@@ -37,7 +37,6 @@ class OpenAIChatService
         $response = $this->sendChatRequest($message);
         return $response;
     }
-
     public function sendChatRequest($message)
     {
         $response = $this->client->post('/v1/chat/completions', [
@@ -56,7 +55,6 @@ class OpenAIChatService
 
         // Decodificar o JSON de resposta
         $result = json_decode($response->getBody()->getContents(), true);
-
         // Retornar o conteúdo gerado pela IA
         return $result['choices'][0]['message']['content'] ?? 'Erro ao gerar resposta';
     }
